@@ -12,8 +12,7 @@ LogsDirectory=monero
 
 Type=forking
 PIDFile=/run/monero/monerod.pid
-ExecStart=/usr/local/bin/monerod --config-file /etc/bitmonero/monerod.conf \
-    --detach --pidfile /run/monero/monerod.pid
+ExecStart=/usr/local/bin/monerod --config-file /etc/bitmonero/monerod.conf --detach
 
 
 Restart=always
