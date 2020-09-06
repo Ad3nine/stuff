@@ -3,19 +3,13 @@ Description=Monero Full Node
 After=network.target
 
 [Service]
-User=root
-Group=root
-WorkingDirectory=~
-RuntimeDirectory=monero
-StateDirectory=monero
-LogsDirectory=monero
-
+User=Adenine
+Group=Adenine
+WorkingDirectory=/
 Type=forking
 PIDFile=/run/monero/monerod.pid
-ExecStart=/usr/local/bin/monerod --config-file /etc/bitmonero/monerod.conf --detach
 
-
-Restart=always
+ExecStart=/usr/local/bin/monerod --restricted-rpc --confirm-external-bind --config-file /etc/bitmonero/monerod.conf --detach
 
 [Install]
 WantedBy=multi-user.target
