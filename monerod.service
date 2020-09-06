@@ -3,8 +3,20 @@ Description=Monero Full Node
 After=network.target
 
 [Service]
-PIDFile=/Thymine/Blockchains/Monero/monerod.pid
-ExecStart=/usr/local/bin/monerod --restricted-rpc --confirm-external-bind --config-file /etc/bitmonero/monerod.conf --detach
+User=monero
+Group=monero
+WorkingDirectory=~
+RuntimeDirectory=monero
+StateDirectory=monero
+LogsDirectory=monero
+
+Type=forking
+PIDFile=/run/monero/monerod.pid
+ExecStart=/usr/bin/monerod --config-file /etc/bitmonero/monerod.conf \
+    --detach --pidfile /run/monero/monerod.pid
+
+
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
