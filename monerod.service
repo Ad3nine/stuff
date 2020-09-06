@@ -3,10 +3,6 @@ Description=Monero Full Node
 After=network.target
 
 [Service]
-User=Adenine
-Group=Adenine
-WorkingDirectory=/
-
 Type=forking
 PIDFile=/Thymine/Blockchains/Monero/monerod.pid
 
