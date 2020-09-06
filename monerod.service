@@ -7,7 +7,6 @@ User=Adenine
 Group=Adenine
 WorkingDirectory=/
 Type=forking
-PIDFile=/run/monero/monerod.pid
 
 ExecStart=/usr/local/bin/monerod --restricted-rpc --confirm-external-bind --config-file /etc/bitmonero/monerod.conf --detach
 
