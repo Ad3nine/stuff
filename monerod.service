@@ -8,7 +8,7 @@ Group=Adenine
 WorkingDirectory=/
 Type=forking
 
-ExecStart=/usr/local/bin/monerod --restricted-rpc --confirm-external-bind --config-file /etc/bitmonero/monerod.conf --detach
+ExecStart=/usr/local/bin/monerod --restricted-rpc --confirm-external-bind --config-file /etc/bitmonero/monerod.conf --detach --pidfile=etc/bitmonero/monerod.pid
 
 [Install]
 WantedBy=multi-user.target
