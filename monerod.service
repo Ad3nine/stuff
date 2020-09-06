@@ -1,0 +1,16 @@
+[Unit]
+Description=Monero Full Node
+After=network.target
+
+[Service]
+User=Adenine
+Group=Adenine
+WorkingDirectory=~
+
+Type=forking
+PIDFile=/Thymine/Blockchains/Monero/monerod.pid
+
+ExecStart=/usr/local/bin/monerod --restricted-rpc --confirm-external-bind --config-file /etc/bitmonero/monerod.conf --detach
+
+[Install]
+WantedBy=multi-user.target
